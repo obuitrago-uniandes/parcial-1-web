@@ -18,4 +18,11 @@ export class PlantListComponent implements OnInit {
       this.plants = p;
     });
   }
+  get numberOfIndoorPlants() {
+    return this.plants.filter(q => q.tipo === 'Interior').length;
+  }
+
+  get numberOfOutdoorPlants() {
+    return this.plants.filter(q => q.tipo === 'Exterior').length;
+  }
 }
